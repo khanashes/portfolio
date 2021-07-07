@@ -1,25 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import React from "react";
+import './css/app.css'
+const App = () => {
+    return (
+        <div className="wrapper">
+            <div>
+                <p><strong>Dennis Gecaj</strong> is a <span className="yellowText">full stack product designer</span> from Germany working in Tech with a <span className="yellowText">master of science degree</span> in industrial design from <span className="yellowText">TUDelft</span>. He has first hand industry experince and recently founded his own startup <span className="yellowText">Yello.</span></p>
+            </div>
+            <button>About</button>
+        </div>
+    )
+};
 
 export default App;
