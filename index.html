@@ -8,7 +8,6 @@
   <!-- Font Awesome for Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto&display=swap" rel="stylesheet">
   <!-- Particles.js Library -->
   <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
@@ -17,9 +16,31 @@
     /* Set default font families */
     body {
       font-family: 'Roboto', sans-serif;
+      margin: 0;
+      overflow-x: hidden;
+      position: relative;
+      z-index: 1;
     }
     h1, h2, h3 {
       font-family: 'Playfair Display', serif;
+    }
+    /* Gradient Background Transition */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom, #2c3e50, #34495e, #1abc9c, #16a085);
+      z-index: -2;
+      background-size: 100% 400%;
+      animation: gradientScroll 30s ease infinite;
+    }
+    @keyframes gradientScroll {
+      0% { background-position: 0% 0%; }
+      50% { background-position: 0% 100%; }
+      100% { background-position: 0% 0%; }
     }
     /* Adjust position of the particles container */
     #particles-js {
@@ -35,10 +56,11 @@
       background: rgba(255, 255, 255, 0.1);
       backdrop-filter: blur(10px);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-radius: 1rem;
     }
     .glassy-card:hover {
       transform: translateY(-10px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
     }
     /* Flip card styles */
     .flip-card {
@@ -57,20 +79,107 @@
     .flip-card-back {
       transform: rotateY(180deg);
     }
-    /* Enhanced Particle Styles */
+    /* Skills section styles */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1.5rem;
+    }
+    .skill-card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(5px);
+      border-radius: 1rem;
+      text-align: center;
+      color: white;
+      padding: 1rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .skill-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+    /* Projects grid styles */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+    .project-card {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 1rem;
+      color: white;
+      padding: 1.5rem;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .project-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+    }
+    /* Experience section styles */
+    .experience-card {
+      max-width: 800px;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 1rem;
+      color: white;
+      padding: 2rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .experience-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+    .experience-item {
+      margin-bottom: 2rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      padding-bottom: 2rem;
+    }
+    .experience-item:last-child {
+      margin-bottom: 0;
+      border-bottom: none;
+    }
+    /* Education and Certificates section styles */
+    .info-card {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 1rem;
+      color: white;
+      padding: 1.5rem;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .info-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+    }
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+    /* Particle styles resembling brain cells */
     canvas {
       display: block;
       vertical-align: bottom;
     }
+    /* Responsive adjustments */
+    @media screen and (max-width: 768px) {
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
-<body class="bg-gradient-to-br from-blue-500 via-purple-600 to-pink-500">
+<body>
   <!-- Particles.js Background -->
   <div id="particles-js"></div>
 
   <!-- About Me Section -->
   <section class="min-h-screen flex items-center justify-center px-4">
-    <div class="bg-white bg-opacity-10 backdrop-blur-md rounded-2xl p-8 text-center text-white shadow-xl max-w-md mx-auto">
+    <div class="glassy-card p-8 text-center text-white shadow-xl max-w-md mx-auto">
       <!-- Interactive Avatar -->
       <div class="flip-card w-32 h-32 mx-auto mb-6">
         <div class="flip-card-inner relative w-full h-full">
@@ -100,78 +209,161 @@
     </div>
   </section>
 
-  <!-- Experience Sections -->
-  <!-- Experience Heading Over First Experience -->
-  <section class="min-h-screen flex flex-col items-center justify-center px-4">
-    <h1 class="text-4xl md:text-5xl text-white mb-12">Experience</h1>
-    <div class="glassy-card rounded-2xl p-8 text-white max-w-2xl w-full mx-auto m-4">
-      <div class="flex flex-col md:flex-row items-center mb-6">
-        <!-- Company Logo -->
-        <img src="http://ignishealth.wpengine.com/wp-content/uploads/2020/07/logo-300x114.png" alt="Ignis Health" class="h-12 md:h-16 mb-4 md:mb-0 md:mr-4">
-        <div class="text-center md:text-left">
-          <h2 class="text-2xl md:text-3xl font-semibold">Ignis Health</h2>
-          <p class="text-lg md:text-xl">Senior Software Engineer</p>
-          <p class="text-xs md:text-sm opacity-70">Nov 2022 - Present | Charlottesville City County, Virginia, United States · Remote</p>
-        </div>
+  <!-- Skills Section -->
+  <section class="px-4 py-16">
+    <h2 class="text-3xl md:text-4xl text-white text-center mb-8">Skills</h2>
+    <div class="skills-grid px-4">
+      <!-- Skill Card 1 -->
+      <div class="skill-card">
+        <i class="fab fa-python text-4xl mb-2"></i>
+        <h3 class="text-xl font-semibold">Python</h3>
       </div>
-      <!-- Responsibilities -->
-      <ul class="list-disc pl-6 space-y-2 text-sm md:text-base">
-        <li>Architected and optimized backend systems using Django Rest Framework, enabling high concurrency and robust data handling.</li>
-        <li>Implemented advanced caching strategies and efficient database queries, resulting in significant performance gains.</li>
-        <li>Led a complex data migration project, ensuring data integrity and seamless transition to a new infrastructure.</li>
-        <li>Introduced a documentation-first approach to enhance team efficiency and maintain consistency across development processes.</li>
-        <li>Enhanced telehealth solutions, integrating scalable features and improving user experience for a large network of healthcare providers.</li>
-      </ul>
+      <!-- Skill Card 2 -->
+      <div class="skill-card">
+        <i class="fas fa-database text-4xl mb-2"></i>
+        <h3 class="text-xl font-semibold">Databases</h3>
+      </div>
+      <!-- Skill Card 3 -->
+      <div class="skill-card">
+        <i class="fab fa-js-square text-4xl mb-2"></i>
+        <h3 class="text-xl font-semibold">JavaScript</h3>
+      </div>
+      <!-- Skill Card 4 -->
+      <div class="skill-card">
+        <i class="fas fa-cloud text-4xl mb-2"></i>
+        <h3 class="text-xl font-semibold">Cloud</h3>
+      </div>
+      <!-- Skill Card 5 -->
+      <div class="skill-card">
+        <i class="fab fa-docker text-4xl mb-2"></i>
+        <h3 class="text-xl font-semibold">Docker</h3>
+      </div>
+      <!-- Skill Card 6 -->
+      <div class="skill-card">
+        <i class="fab fa-react text-4xl mb-2"></i>
+        <h3 class="text-xl font-semibold">React</h3>
+      </div>
+      <!-- Add more skill cards as needed -->
     </div>
   </section>
 
-  <!-- Experience 2 -->
-  <section class="min-h-screen flex items-center justify-center px-4">
-    <div class="glassy-card rounded-2xl p-8 text-white max-w-2xl w-full mx-auto m-4">
-      <div class="flex flex-col md:flex-row items-center mb-6">
-        <!-- Company Logo -->
-        <img src="https://invozone.com/static/ef4c1f0be0caee5a4596e5c2311d5e27/1d03c/InvoZone_Logo.webp" alt="InvoZone" class="h-12 md:h-16 mb-4 md:mb-0 md:mr-4">
-        <div class="text-center md:text-left">
-          <h2 class="text-2xl md:text-3xl font-semibold">InvoZone</h2>
-          <p class="text-lg md:text-xl">Software Engineer</p>
-          <p class="text-xs md:text-sm opacity-70">Dec 2020 - Nov 2022 | Kuala Lumpur, Malaysia · Remote</p>
-        </div>
+  <!-- Projects Section -->
+  <section class="px-4 py-16">
+    <h2 class="text-3xl md:text-4xl text-white text-center mb-8">Projects</h2>
+    <div class="projects-grid">
+      <!-- Project Card 1 -->
+      <div class="project-card">
+        <img src="project1.png" alt="Project 1" class="w-full h-48 object-cover rounded mb-4">
+        <h3 class="text-2xl font-semibold mb-2">Project One</h3>
+        <p class="mb-4">A web application for real-time data analysis and visualization.</p>
+        <a href="#" class="text-blue-300 hover:underline">View Project</a>
       </div>
-      <!-- Responsibilities -->
-      <ul class="list-disc pl-6 space-y-2 text-sm md:text-base">
-        <li>Developed a USA-based news publishing tool with serverless architecture on GCP, reducing server costs by 40% and handling up to 100,000 daily users.</li>
-        <li>Built a decentralized exchange for a Web3 project, enabling secure and scalable transactions with blockchain technology.</li>
-        <li>Created a 3D inspection tool using Three.js, integrating streaming services and Level of Detail (LOD) to manage and display large 3D models efficiently.</li>
-        <li>Automated workflows with GitHub CI/CD, cutting build times by 50% and improving deployment efficiency.</li>
-        <li>Ensured code quality by adhering to Airbnb and PEP8 standards, resulting in a 30% reduction in bug reports and easier maintenance.</li>
-        <li>Deployed projects on AWS EC2 and Digital Ocean, ensuring 99.9% uptime and scalable performance for end-users.</li>
-      </ul>
+      <!-- Project Card 2 -->
+      <div class="project-card">
+        <img src="project2.png" alt="Project 2" class="w-full h-48 object-cover rounded mb-4">
+        <h3 class="text-2xl font-semibold mb-2">Project Two</h3>
+        <p class="mb-4">An e-commerce platform with scalable microservices architecture.</p>
+        <a href="#" class="text-blue-300 hover:underline">View Project</a>
+      </div>
+      <!-- Project Card 3 -->
+      <div class="project-card">
+        <img src="project3.png" alt="Project 3" class="w-full h-48 object-cover rounded mb-4">
+        <h3 class="text-2xl font-semibold mb-2">Project Three</h3>
+        <p class="mb-4">A mobile app for task management with offline capabilities.</p>
+        <a href="#" class="text-blue-300 hover:underline">View Project</a>
+      </div>
+      <!-- Add more project cards as needed -->
     </div>
   </section>
 
-  <!-- Experience 3 -->
-  <section class="min-h-screen flex items-center justify-center px-4">
-    <div class="glassy-card rounded-2xl p-8 text-white max-w-2xl w-full mx-auto m-4">
-      <div class="flex flex-col md:flex-row items-center mb-6">
-        <!-- Company Logo -->
-        <img src="https://taleemabad.com/wp-content/uploads/2022/03/Asset-2@2x.png" alt="Taleemabad" class="h-12 md:h-16 mb-4 md:mb-0 md:mr-4">
-        <div class="text-center md:text-left">
-          <h2 class="text-2xl md:text-3xl font-semibold">Taleemabad</h2>
-          <p class="text-lg md:text-xl">Software Engineer Intern</p>
-          <p class="text-xs md:text-sm opacity-70">Jun 2020 - Dec 2020 | Islamabad, Pakistan · On-site</p>
+  <!-- Experience Section -->
+  <section class="px-4 py-16">
+    <h2 class="text-3xl md:text-4xl text-white text-center mb-8">Experience</h2>
+    <div class="experience-card">
+      <div class="experience-content">
+        <!-- Experience Item 1 -->
+        <div class="experience-item">
+          <img src="http://ignishealth.wpengine.com/wp-content/uploads/2020/07/logo-300x114.png" alt="Ignis Health" class="h-16 mx-auto mb-4">
+          <h3 class="text-2xl font-semibold mb-2">Ignis Health</h3>
+          <p>Senior Software Engineer | Nov 2022 - Present</p>
+          <ul class="list-disc pl-6 mt-4 space-y-2 text-sm md:text-base text-left">
+            <li>Architected and optimized backend systems using Django Rest Framework.</li>
+            <li>Implemented advanced caching strategies, resulting in significant performance gains.</li>
+            <!-- More responsibilities -->
+          </ul>
+        </div>
+        <!-- Separator -->
+        <hr class="border-gray-500 my-4">
+        <!-- Experience Item 2 -->
+        <div class="experience-item">
+          <img src="https://invozone.com/static/ef4c1f0be0caee5a4596e5c2311d5e27/1d03c/InvoZone_Logo.webp" alt="InvoZone" class="h-16 mx-auto mb-4">
+          <h3 class="text-2xl font-semibold mb-2">InvoZone</h3>
+          <p>Software Engineer | Dec 2020 - Nov 2022</p>
+          <ul class="list-disc pl-6 mt-4 space-y-2 text-sm md:text-base text-left">
+            <li>Developed a news publishing tool with serverless architecture on GCP.</li>
+            <li>Built a decentralized exchange for a Web3 project using blockchain technology.</li>
+            <!-- More responsibilities -->
+          </ul>
+        </div>
+        <!-- Separator -->
+        <hr class="border-gray-500 my-4">
+        <!-- Experience Item 3 -->
+        <div class="experience-item">
+          <img src="https://taleemabad.com/wp-content/uploads/2022/03/Asset-2@2x.png" alt="Taleemabad" class="h-16 mx-auto mb-4">
+          <h3 class="text-2xl font-semibold mb-2">Taleemabad</h3>
+          <p>Software Engineer Intern | Jun 2020 - Dec 2020</p>
+          <ul class="list-disc pl-6 mt-4 space-y-2 text-sm md:text-base text-left">
+            <li>Developed scalable backend systems using Python and Django.</li>
+            <li>Designed user-friendly frontend interfaces with JavaScript.</li>
+            <!-- More responsibilities -->
+          </ul>
         </div>
       </div>
-      <!-- Responsibilities -->
-      <ul class="list-disc pl-6 space-y-2 text-sm md:text-base">
-        <li>Developed scalable backend systems using Python and Django, supporting up to 1,000 concurrent users.</li>
-        <li>Designed user-friendly frontend interfaces with JavaScript, enhancing user engagement by 20%.</li>
-        <li>Implemented Redis for caching, resulting in a 40% improvement in application performance.</li>
-        <li>Managed PostgreSQL databases, ensuring efficient data handling and integrity for over 10,000 records.</li>
-        <li>Utilized AWS services for secure and reliable infrastructure, achieving 99.9% uptime.</li>
-        <li>Contributed to building applications that transformed the educational experience for students and educators.</li>
-      </ul>
     </div>
   </section>
+
+  <!-- Education & Certificates Section -->
+  <section class="px-4 py-16">
+    <h2 class="text-3xl md:text-4xl text-white text-center mb-8">Education & Certificates</h2>
+    <div class="info-grid">
+      <!-- Education Card 1 -->
+      <div class="info-card">
+        <img src="university_logo.png" alt="University" class="h-16 mx-auto mb-4">
+        <h3 class="text-2xl font-semibold mb-2">ABC University</h3>
+        <p>Bachelor of Science in Computer Science | 2016 - 2020</p>
+        <ul class="list-disc pl-6 mt-4 space-y-2 text-sm md:text-base text-left">
+          <li>Graduated with honors, GPA: 3.8/4.0.</li>
+          <li>Relevant coursework: Data Structures, Algorithms, Database Systems, AI.</li>
+          <li>Activities: Coding Club President, Hackathon participant.</li>
+        </ul>
+      </div>
+      <!-- Certificate Card 1 -->
+      <div class="info-card">
+        <img src="certificate_logo.png" alt="Certificate" class="h-16 mx-auto mb-4">
+        <h3 class="text-2xl font-semibold mb-2">Certified AWS Solutions Architect</h3>
+        <p>Issued by Amazon Web Services | 2021</p>
+        <ul class="list-disc pl-6 mt-4 space-y-2 text-sm md:text-base text-left">
+          <li>Validated expertise in designing and deploying scalable systems on AWS.</li>
+          <li>Demonstrated proficiency in AWS services and architectural best practices.</li>
+        </ul>
+      </div>
+      <!-- Certificate Card 2 -->
+      <div class="info-card">
+        <img src="certificate_logo2.png" alt="Certificate" class="h-16 mx-auto mb-4">
+        <h3 class="text-2xl font-semibold mb-2">Professional Scrum Master</h3>
+        <p>Issued by Scrum.org | 2020</p>
+        <ul class="list-disc pl-6 mt-4 space-y-2 text-sm md:text-base text-left">
+          <li>Proven understanding of Scrum framework and Agile methodologies.</li>
+          <li>Experience in facilitating Scrum teams to improve productivity and collaboration.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-6 text-center text-white">
+    <p>&copy; 2023 Hamza Khan. All rights reserved.</p>
+  </footer>
 
   <!-- Enhanced Particle Effect Configuration -->
   <script>
@@ -179,31 +371,31 @@
       {
         "particles": {
           "number": {
-            "value": 60,
+            "value": 80,
             "density": {
               "enable": true,
               "value_area": 800
             }
           },
-          "color": { "value": ["#ffffff", "#ff0000", "#0000ff", "#00ff00"] },
+          "color": { "value": "#ffffff" },
           "shape": {
-            "type": ["circle", "triangle", "edge", "polygon"],
+            "type": "circle",
             "stroke": { "width": 0, "color": "#000000" },
             "polygon": { "nb_sides": 6 }
           },
           "opacity": {
-            "value": 0.7,
-            "random": true,
-            "anim": { "enable": true, "speed": 1, "opacity_min": 0.3, "sync": false }
+            "value": 0.5,
+            "random": false,
+            "anim": { "enable": false }
           },
           "size": {
-            "value": 4,
+            "value": 3,
             "random": true,
-            "anim": { "enable": true, "speed": 3, "size_min": 0.5, "sync": false }
+            "anim": { "enable": false }
           },
           "line_linked": {
             "enable": true,
-            "distance": 100,
+            "distance": 150,
             "color": "#ffffff",
             "opacity": 0.4,
             "width": 1
@@ -212,25 +404,22 @@
             "enable": true,
             "speed": 2,
             "direction": "none",
-            "random": true,
+            "random": false,
             "straight": false,
             "out_mode": "out",
-            "attract": { "enable": true, "rotateX": 600, "rotateY": 1200 }
+            "bounce": false
           }
         },
         "interactivity": {
           "detect_on": "canvas",
           "events": {
-            "onhover": { "enable": true, "mode": "repulse" },
+            "onhover": { "enable": true, "mode": "grab" },
             "onclick": { "enable": true, "mode": "push" },
             "resize": true
           },
           "modes": {
-            "grab": { "distance": 400, "line_linked": { "opacity": 1 } },
-            "bubble": { "distance": 400, "size": 40, "duration": 2, "opacity": 8, "speed": 3 },
-            "repulse": { "distance": 100, "duration": 0.4 },
-            "push": { "particles_nb": 4 },
-            "remove": { "particles_nb": 2 }
+            "grab": { "distance": 140, "line_linked": { "opacity": 1 } },
+            "push": { "particles_nb": 4 }
           }
         },
         "retina_detect": true
