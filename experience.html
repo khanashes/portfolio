@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Experience - Hamza Khan</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Custom Styles -->
+  <style>
+    /* Full-page sections with scroll snap */
+    html, body {
+      height: 100%;
+      scroll-behavior: smooth;
+      scroll-snap-type: y mandatory;
+      overflow-y: scroll;
+    }
+    section {
+      scroll-snap-align: start;
+    }
+    /* Glassy card styles */
+    .glassy-card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+    }
+    /* Custom font for "Experience" heading */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+    .experience-heading {
+      font-family: 'Poppins', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-blue-500 via-purple-600 to-pink-500">
+  <!-- Experience Heading -->
+  <section class="min-h-screen flex items-center justify-center">
+    <h1 class="text-6xl text-white experience-heading">Experience</h1>
+  </section>
+
+  <!-- Experiences -->
+  <!-- Experience 1 -->
+  <section class="min-h-screen flex items-center justify-center">
+    <div class="glassy-card rounded-2xl p-8 text-white max-w-2xl mx-auto m-4">
+      <div class="flex items-center mb-6">
+        <!-- Company Logo -->
+        <img src="http://ignishealth.wpengine.com/wp-content/uploads/2020/07/logo-300x114.png" alt="Ignis Health" class=" mr-4">
+        <div>
+          <h2 class="text-3xl font-semibold">Ignis Health</h2>
+          <p class="text-xl">Senior Software Engineer</p>
+          <p class="text-sm opacity-70">Nov 2022 - Present | Charlottesville City County, Virginia, United States · Remote</p>
+        </div>
+      </div>
+      <!-- Responsibilities -->
+      <ul class="list-disc pl-6 space-y-2">
+        <li>Architected and optimized backend systems using Django Rest Framework, enabling high concurrency and robust data handling.</li>
+        <li>Implemented advanced caching strategies and efficient database queries, resulting in significant performance gains.</li>
+        <li>Led a complex data migration project, ensuring data integrity and seamless transition to a new infrastructure.</li>
+        <li>Introduced a documentation-first approach to enhance team efficiency and maintain consistency across development processes.</li>
+        <li>Enhanced telehealth solutions, integrating scalable features and improving user experience for a large network of healthcare providers.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Experience 2 -->
+  <section class="min-h-screen flex items-center justify-center">
+    <div class="glassy-card rounded-2xl p-8 text-white max-w-2xl mx-auto m-4">
+      <div class="flex items-center mb-6">
+        <!-- Company Logo -->
+        <img src="https://invozone.com/static/ef4c1f0be0caee5a4596e5c2311d5e27/1d03c/InvoZone_Logo.webp" alt="InvoZone" class=" mr-4">
+        <div>
+          <h2 class="text-3xl font-semibold">InvoZone</h2>
+          <p class="text-xl">Software Engineer</p>
+          <p class="text-sm opacity-70">Dec 2020 - Nov 2022 | Kuala Lumpur, Malaysia · Remote</p>
+        </div>
+      </div>
+      <!-- Responsibilities -->
+      <ul class="list-disc pl-6 space-y-2">
+        <li>Developed a USA-based news publishing tool with serverless architecture on GCP, reducing server costs by 40% and handling up to 100,000 daily users.</li>
+        <li>Built a decentralized exchange for a Web3 project, enabling secure and scalable transactions with blockchain technology.</li>
+        <li>Created a 3D inspection tool using Three.js, integrating streaming services and Level of Detail (LOD) to manage and display large 3D models efficiently.</li>
+        <li>Automated workflows with GitHub CI/CD, cutting build times by 50% and improving deployment efficiency.</li>
+        <li>Ensured code quality by adhering to Airbnb and PEP8 standards, resulting in a 30% reduction in bug reports and easier maintenance.</li>
+        <li>Deployed projects on AWS EC2 and Digital Ocean, ensuring 99.9% uptime and scalable performance for end-users.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Experience 3 -->
+  <section class="min-h-screen flex items-center justify-center">
+    <div class="glassy-card rounded-2xl p-8 text-white max-w-2xl mx-auto m-4">
+      <div class="flex items-center mb-6">
+        <!-- Company Logo -->
+        <img src="https://taleemabad.com/wp-content/uploads/2022/03/Asset-2@2x.png" alt="Taleemabad" class="h-30 mr-4">
+        <div>
+          <h2 class="text-3xl font-semibold">Taleemabad</h2>
+          <p class="text-xl">Software Engineer Intern</p>
+          <p class="text-sm opacity-70">Jun 2020 - Dec 2020 | Islamabad, Pakistan · On-site</p>
+        </div>
+      </div>
+      <!-- Responsibilities -->
+      <ul class="list-disc pl-6 space-y-2">
+        <li>Developed scalable backend systems using Python and Django, supporting up to 1,000 concurrent users.</li>
+        <li>Designed user-friendly frontend interfaces with JavaScript, enhancing user engagement by 20%.</li>
+        <li>Implemented Redis for caching, resulting in a 40% improvement in application performance.</li>
+        <li>Managed PostgreSQL databases, ensuring efficient data handling and integrity for over 10,000 records.</li>
+        <li>Utilized AWS services for secure and reliable infrastructure, achieving 99.9% uptime.</li>
+        <li>Contributed to building applications that transformed the educational experience for students and educators.</li>
+      </ul>
+    </div>
+  </section>
+</body>
+</html>

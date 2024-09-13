@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Skills - Hamza Khan</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Custom Styles -->
+  <style>
+    /* Glassy card styles */
+    .glassy-card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      padding: 2rem;
+      transition: all 0.3s ease;
+      overflow: hidden; /* Ensures text does not overflow */
+      word-wrap: break-word; /* Prevents long words from breaking the layout */
+    }
+
+    .glassy-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Custom font for "Skills" heading */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+    .skills-heading {
+      font-family: 'Poppins', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-blue-500 via-purple-600 to-pink-500 min-h-screen flex items-center justify-center p-6">
+
+  <!-- Skills Section -->
+  <div class="text-center mb-10 w-full">
+    <h1 class="text-5xl text-white skills-heading mb-10">Skills</h1>
+  </div>
+
+  <!-- Grid for Skill Categories -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+
+    <!-- Languages Card -->
+    <div class="glassy-card rounded-2xl text-white">
+      <h2 class="text-xl font-semibold mb-4">Languages</h2>
+      <table class="table-auto text-sm w-full">
+        <thead>
+          <tr>
+            <th class="text-left py-2">Languages</th>
+            <th class="text-left py-2">Proficiency</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-b border-white/20">
+            <td class="py-2">Python</td>
+            <td class="py-2">Expert</td>
+          </tr>
+          <tr class="border-b border-white/20">
+            <td class="py-2">JavaScript</td>
+            <td class="py-2">Advanced</td>
+          </tr>
+          <tr class="border-b border-white/20">
+            <td class="py-2">Golang</td>
+            <td class="py-2">Intermediate</td>
+          </tr>
+          <tr>
+            <td class="py-2">SQL</td>
+            <td class="py-2">Advanced</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Frameworks Card -->
+    <div class="glassy-card rounded-2xl text-white">
+      <h2 class="text-xl font-semibold mb-4">Frameworks</h2>
+      <table class="table-auto text-sm w-full">
+        <thead>
+          <tr>
+            <th class="text-left py-2">Frameworks</th>
+            <th class="text-left py-2">Proficiency</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-b border-white/20">
+            <td class="py-2">Django</td>
+            <td class="py-2">Expert</td>
+          </tr>
+          <tr class="border-b border-white/20">
+            <td class="py-2">React</td>
+            <td class="py-2">Intermediate</td>
+          </tr>
+          <tr class="border-b border-white/20">
+            <td class="py-2">Flask</td>
+            <td class="py-2">Advanced</td>
+          </tr>
+          <tr>
+            <td class="py-2">Three.js</td>
+            <td class="py-2">Intermediate</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Tools Card -->
+    <div class="glassy-card rounded-2xl text-white">
+      <h2 class="text-xl font-semibold mb-4">Tools & Technologies</h2>
+      <table class="table-auto text-sm w-full">
+        <thead>
+          <tr>
+            <th class="text-left py-2">Tools & Technologies</th>
+            <th class="text-left py-2">Proficiency</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-b border-white/20">
+            <td class="py-2">Docker</td>
+            <td class="py-2">Expert</td>
+          </tr>
+          <tr class="border-b border-white/20">
+            <td class="py-2">AWS</td>
+            <td class="py-2">Advanced</td>
+          </tr>
+          <tr class="border-b border-white/20">
+            <td class="py-2">GitHub Actions (CI/CD)</td>
+            <td class="py-2">Advanced</td>
+          </tr>
+          <tr>
+            <td class="py-2">PostgreSQL</td>
+            <td class="py-2">Advanced</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Software Engineering Card -->
+    <div class="glassy-card rounded-2xl text-white">
+      <h2 class="text-xl font-semibold mb-4">Software Engineering</h2>
+      <table class="table-auto text-sm w-full">
+        <thead>
+          <tr>
+            <th class="text-left py-2">Skills</th>
+            <th class="text-left py-2">Proficiency</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-b border-white/20">
+            <td class="py-2">Solution Architecture</td>
+            <td class="py-2">Advanced</td>
+          </tr>
+          <tr class="border-b border-white/20">
+            <td class="py-2">Microservices</td>
+            <td class="py-2">Advanced</td>
+          </tr>
+          <tr class="border-b border-white/20">
+            <td class="py-2">API Design & Development</td>
+            <td class="py-2">Expert</td>
+          </tr>
+          <tr>
+            <td class="py-2">Data Migration</td>
+            <td class="py-2">Advanced</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+</body>
+</html>
